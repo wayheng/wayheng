@@ -19,7 +19,11 @@
 
 	<dependencyManagement>
 		<dependencies>
+<<<<<<< HEAD
 			<!-- spring start -->
+=======
+			<!-- spring start分支测试 -->
+>>>>>>> branch 'master' of git@github.com:wayheng/wayheng.git
 			<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>

@@ -5,7 +5,7 @@ import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
 
 /**
- * 处理器-百度热搜
+ * 处理器-百度热搜1
  * @author wayheng
  *
  */
