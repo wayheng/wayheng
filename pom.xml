@@ -15,7 +15,7 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- spring start -->
+			<!-- spring start分支测试 -->
 			<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
