@@ -7,22 +7,26 @@
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
+	<modules>
+		<module>wayheng-webmagic</module>
+	</modules>
+
 	<properties>
-		<java.version>1.8</java.version>
-		<springfox.swagger.version>2.9.2</springfox.swagger.version>
+		<webmagic.version>0.7.5</webmagic.version>
+		<knife4j.version>3.0.3</knife4j.version>
 		<log4j.version>2.15.0</log4j.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- spring start1 -->
+			<!-- spring start -->
 			<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<!-- <version>Greenwich.SR5</version> -->
 				<version>2021.0.0</version>
 				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 
 			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
@@ -31,7 +35,7 @@
 				<artifactId>spring-boot-dependencies</artifactId>
 				<version>2.6.1</version>
 				<type>pom</type>
-				<scope>provided</scope>
+				<scope>import</scope>
 			</dependency>
 
 			<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-jwt -->
@@ -69,7 +73,7 @@
 				<artifactId>mybatis-spring-boot-starter</artifactId>
 				<version>2.2.0</version>
 			</dependency>
-			
+
 			<!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
 			<dependency>
 				<groupId>com.baomidou</groupId>
@@ -90,7 +94,7 @@
 				<artifactId>druid</artifactId>
 				<version>1.2.8</version>
 			</dependency>
-			
+
 			<!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
 			<dependency>
 				<groupId>com.alibaba</groupId>
@@ -100,11 +104,11 @@
 
 			<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
 			<dependency>
-			    <groupId>com.alibaba</groupId>
-			    <artifactId>fastjson</artifactId>
-			    <version>1.2.78</version>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>1.2.78</version>
 			</dependency>
-			
+
 			<!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->
 			<dependency>
 				<groupId>com.alibaba</groupId>
@@ -126,13 +130,27 @@
 				<version>1.18.22</version>
 				<scope>provided</scope>
 			</dependency>
-			
+
+			<!-- https://mvnrepository.com/artifact/us.codecraft/webmagic-core -->
+			<dependency>
+				<groupId>us.codecraft</groupId>
+				<artifactId>webmagic-core</artifactId>
+				<version>${webmagic.version}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/us.codecraft/webmagic-extension -->
+			<dependency>
+				<groupId>us.codecraft</groupId>
+				<artifactId>webmagic-extension</artifactId>
+				<version>${webmagic.version}</version>
+			</dependency>
+
 			<!-- 单机环境 -->
 			<!-- https://mvnrepository.com/artifact/com.github.xiaoymin/knife4j-spring-boot-starter -->
 			<dependency>
 				<groupId>com.github.xiaoymin</groupId>
 				<artifactId>knife4j-spring-boot-starter</artifactId>
-				<version>3.0.3</version>
+				<version>${knife4j.version}</version>
 			</dependency>
 
 			<!-- 集群环境 -->
@@ -140,7 +158,7 @@
 			<dependency>
 				<groupId>com.github.xiaoymin</groupId>
 				<artifactId>knife4j-micro-spring-boot-starter</artifactId>
-				<version>3.0.3</version>
+				<version>${knife4j.version}</version>
 			</dependency>
 
 			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml -->
@@ -156,7 +174,7 @@
 				<artifactId>jjwt</artifactId>
 				<version>0.9.1</version>
 			</dependency>
-			
+
 			<!-- https://mvnrepository.com/artifact/com.xuxueli/xxl-job-core -->
 			<dependency>
 				<groupId>com.xuxueli</groupId>
@@ -206,104 +224,4 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
-	<build>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
-
-		<plugins>
-			<!-- MAVEN配置 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-
-	<!-- MAVEN的远程库 -->
-	<repositories>
-		<!-- 阿里MAVEN库 -->
-		<repository>
-			<id>aliyun-repos</id>
-			<name>Aliyun Repository</name>
-			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-
-		<!-- MAVEN默认库 -->
-		<repository>
-			<id>sonatype-repos</id>
-			<name>Sonatype Repository</name>
-			<url>https://oss.sonatype.org/content/groups/public</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		
-		<repository>
-			<id>sonatype-repos-s</id>
-			<name>Sonatype Repository</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-
-		<!-- spring MAVEN库 -->
-		<repository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-
-		<!-- spring MAVEN库 -->
-		<repository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-
-	<!-- MAVEN插件的远程仓库 -->
-	<pluginRepositories>
-		<!-- 阿里云的MAVEN库 -->
-		<pluginRepository>
-			<id>aliyun-repos</id>
-			<name>Aliyun Repository</name>
-			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
 </project>
