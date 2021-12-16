@@ -7,11 +7,6 @@ import com.wayheng.processor.BaiDuReSouProcessor;
 import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Spider;
 
-/**
- * 
- * @author wayheng
- *
- */
 public class BaiduReSouSpider {
 
 	public static void main(String[] args) {
