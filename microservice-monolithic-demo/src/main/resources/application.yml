@@ -1,0 +1,30 @@
+server:
+  port: 81681
+  tomcat:
+    uri-encoding: utf-8
+    threads:
+      max: 1000
+
+spring:
+  profiles:
+    active: dev
+  server:
+    time-zone: Asia/Shanghai
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+    locale: zh_CN
+  devtools:
+    livereload:
+      enabled: false
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 150MB # 单个文件最大尺寸
+      max-request-size: 150MB # 多文件上传时，最大上传尺寸
+
+logging:
+  level:
+    root: info
+  file:
+    path: ./logs
