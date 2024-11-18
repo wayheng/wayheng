@@ -49,11 +49,11 @@
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
-            <dependency>
+            <!--<dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>3.5.9</version>
-            </dependency>
+            </dependency>-->
 
             <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
             <dependency>
