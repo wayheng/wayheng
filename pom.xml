@@ -9,9 +9,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>microservice-distributed-demo</module>
-        <module>microservice-monolithic-demo</module>
-        <module>wayheng-security</module>
         <module>wayheng-admin</module>
         <module>wayheng-authorize</module>
     </modules>
