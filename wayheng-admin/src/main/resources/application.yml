@@ -7,16 +7,11 @@ server:
 
 spring:
   profiles:
-    active: dev
-  server:
-    time-zone: Asia/Shanghai
+    active: @spring.profiles.active@
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: Asia/Shanghai
     locale: zh_CN
-  devtools:
-    livereload:
-      enabled: false
   servlet:
     multipart:
       enabled: true
